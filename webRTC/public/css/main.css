@@ -1,0 +1,62 @@
+body {
+    margin: 0; padding: 0;
+    font-family: sans-serif;
+    font-size: medium;
+}
+
+ul.slides{
+    background: white;
+}
+
+/* 새로운 CSS */
+
+.slide_wrapper{
+    position: relative;
+    width: 660px;
+    margin: 0 auto;
+    margin-top: 10px;
+
+    height: 200px;
+    overflow: hidden;
+}
+.slides{
+    position: absolute;
+    left: 0; top:0;
+    transition: left 0.5s ease-out;
+}
+.vid{
+    width: 200px;
+    height: 200px;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+.slides li:not(:last-child){
+    float: left;
+    margin-right: 30px;
+}
+
+/* Slide Button */
+.controls{
+    text-align: center;
+    margin-top: 25px;
+}
+.controls span{
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+}
+
+.shareScreen{
+    margin-left: 15%;
+    margin-top: 40px;
+    background-color: darkgray;
+    --width: 40vw;
+    width: var(--width);
+    height: calc(var(--width) * 0.5625);
+}
+
+.controls span.prev{right:calc(100%+50px);}
+
+.controls span.next{left:calc(100%+50px);}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <script lang="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="/simple-peer/simplepeer.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/bottom-bar.css">
+
+    <!-- Stt, tts CSS-->
+    <link rel="stylesheet" href="css/caption.css?ver=5">
+    <!--Chat css-->
+    <link rel="stylesheet" href="css/chat.css?ver=6">
+    <style>
+        #upload{
+            display:none
+        }
+    </style>
+</head>
+<body>
+<!-- 좌측 STT, TTS-->
+      <div id="caption_main">
+        <div id="caption">
+          <div id='result'>
+        </div>
+      </div>
+    </div>
+      
+  <!--우측 Chat-->  
+  <div id="chat_main">
+    <div id="chat">
+      <!-- 채팅 메시지 영역 -->
+    </div>
+    <div>
+      <input type="text" id="test" placeholder="메시지를 입력해주세요..">
+      <button onclick="send()">전송</button>
+    </div>
+  </div>
+
+    <div id="videos" class="slide_wrapper">
+        <ul class="slides">
+            <li><video id="localVideo" class="vid" autoplay muted></video></li>
+            <li><video class="vid" autoplay muted></video></li>
+            <li><video class="vid" autoplay muted></video></li>
+            <li><video class="vid" autoplay muted></video></li>
+            <li><video class="vid" autoplay muted></video></li>
+            <li><video class="vid" autoplay muted></video></li>
+            <li><video class="vid" autoplay muted></video></li>
+            <li><video class="vid" autoplay muted></video></li>
+            <li><video class="vid" autoplay muted></video></li>
+            <li><video class="vid" autoplay muted></video></li>
+        </ul>
+    </div>
+
+    <p class="controls">
+        <span class="prev">prev</span>
+        <span class="next">next</span>
+    </p>
+
+    <div>
+        <video class="shareScreen" autoplay muted></video>
+    </div>
+
+    <!--하단 메뉴-->
+    <div class="container">
+        <div class="bottom-nav">
+            <ul>
+                <li><a href="#" onclick="return muteMic();">음성</a></li>
+                <li><a href="#" onclick="return muteCam();">비디오</a></li>
+
+                <li><a href="#" onclick="return setScreen();">화면공유</a></li>
+
+                <div class="dropup">
+                    <li><a id="recordBtn" href="#" onclick="return processRecording();">녹화</a> </li>
+                    <div class="dropup-content">
+                        <a href="#" value="0" onclick="return setRecordSet(0)">Screen Only (without audio)</a>
+                        <a href="#" value="1" onclick="return setRecordSet(1)">Screen + Microphone</a>
+                        <a href="#" value="2" onclick="return setRecordSet(2)">Screen + Speakers</a>
+                        <a href="#" value="3" onclick="return setRecordSet(3)">Screen + Microphone + Speakers</a>
+                        <a href="#" value="4" onclick="return setRecordSet(4)">Chrome Tab</a>
+                    </div>
+                </div>
+                <li><a href="#" onclick="return acoding_start()">STT </a></li>
+                <li><a href="#" onclick="return toggleTTS()">TTS</a></li>
+                <li><a href="#">채팅</a></li>
+                <li><a href="#" onclick="browse()">파일 공유</a></li>
+                <li><a href="#" onclick="return removeLocalStream()">나가기</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- TEMP ZONE  -->
+    <input id="selectedIdx" type="hidden" value="-1">
+    <input id="attendCount" type="hidden" value="1">
+    <input id="ttsStatus" type="hidden" value=false>
+    <div id="div1" style="display: none"></div>
+</body>
+<footer>
+    <script src='./js/main.js?ver=17' lang="text/javascript"></script>
+    <script src='./js/slides.js?ver=4' lang="text/javascript"></script>
+    <script src='./js/recordVideo.js?ver=7' lang="text/javascript"></script>
+    <script src='./js/sendFile.js?ver=4' lang="text/javascript"></script>
+
+    <!--Stt js-->
+    <script src="js/stt/annyang.js?ver=12"></script>
+    <script src="js/stt/stt.js?ver=14"></script>
+    <!--TTS js-->
+    <script src="js/tts/tts.js?ver=16"></script>
+    <!--Chat js-->
+    <script src="js/chat/chat.js?ver=22"></script>
+</footer>
+</html>

@@ -1,0 +1,134 @@
+/* 메인 */
+#chat_main {
+  margin-bottom: 10px;
+  background-color: beige;
+  width: 20%;
+  height: 1000px;
+  float: right;
+  position: relative;
+}
+
+/* 채팅 영역 */
+#chat {
+  height: 90%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+/* 접속 알림 */
+.connect {
+  width: 90%;
+  margin: auto;
+  color: gray;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 접속 종료 알림 */
+.disconnect {
+  width: 90%;
+  margin: auto;
+  color: brown;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* 내가 보낸 메시지 */
+.me {
+  width: 80%;
+  max-height: 50%;
+  padding: 5px;
+  float: right;
+  margin: 10px 15px 10px 20%;
+  background-color: lemonchiffon;
+  border-radius: 5px;
+  object-fit: contain;
+  border-radius: 40px;
+}
+
+/* 상대방 id */
+.u_id {
+  float: left;
+  text-align: left;
+  width: 80%;
+  color: darkslategrey;
+  margin: 10px 40px 0px 10px;
+}
+
+/* 상대방이 보낸 메시지 */
+.other {
+  width: 80%;
+  max-height: 50%;
+  padding: 5px;
+  /* 위 오른쪽 아래 왼쪽 */
+  margin: 0px 20% auto 15px;
+  background-color: skyblue;
+  float: left;
+  border-radius: 5px;
+  object-fit: contain;
+  border-radius: 40px;
+}
+
+#chat_main > div {
+  text-align: center;
+}
+
+/* 메시지 input */
+#chat_main > div > input {
+  width: 70%;
+  height: 32px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+}
+
+
+/* 메시지 전송 버튼 */
+#chat_main > div > button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  background: var(--button-bg-color);
+  color: var(--button-color);
+  
+  margin: 0;
+  padding: 0.5rem 1rem;
+  
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  
+  border: none;
+  border-radius: 4px;
+  
+  display: inline-block;
+  width: auto;
+  
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  cursor: pointer;
+  
+  transition: 0.5s;
+}
+
+#chat_main > div > button.success {
+  margin-top: 10px;
+  --button-bg-color: #28a745;
+  --button-hover-bg-color: #218838;
+}
+
+
+/* button css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+:root {
+  --button-color: #ffffff;
+  --button-bg-color: #0d6efd;
+  --button-hover-bg-color: #025ce2;
+}
